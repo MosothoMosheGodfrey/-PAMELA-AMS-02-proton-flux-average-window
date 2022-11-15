@@ -102,7 +102,6 @@ def Prot_energy2rigidity(epn):
 #                     <<<<<<<<<<<< Mosotho & Strauss 2020 LIS >>>>>>>>>>>>>>>         #
 def LIS20P(En_): # Units   (m2.sr.s.GeV)^-1 .
     En_  =  np.array(En_)
-    #jLISP = (20.98)*(((0.729 + En_**(0.795))**-3.77641509434))*(En_**0.179)
     jLISP = (20.98)*(((0.777*E0  + En_**(0.795))**-3.77641509434))*(En_**0.179)
     return jLISP*1000 
 # Convert Energy spectra to rigidity spectra.... [see  Boschinia et al. 2022,https://doi.org/10.1016/j.asr.2022.03.026,Eq. (2)]
