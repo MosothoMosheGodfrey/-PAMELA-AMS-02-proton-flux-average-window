@@ -105,7 +105,6 @@ def LIS20P(En_): # Units   (m2.sr.s.GeV)^-1 .
     jLISP = (20.98)*(((0.777*E0  + En_**(0.795))**-3.77641509434))*(En_**0.179)
     return jLISP*1000 
 # Convert Energy spectra to rigidity spectra.... [see  Boschinia et al. 2022,https://doi.org/10.1016/j.asr.2022.03.026,Eq. (2)]
-
 def dJdP(T,_Flux):
     Rn  =  np.array(Prot_energy2rigidity(np.array(T)))
     #Intens  =  np.array(np.array((A/Z)*(T + E0)*np.power( np.power(np.power(T,2) + 2*T*E0,0.5),-1.0))* np.array(_Flux))
@@ -113,7 +112,6 @@ def dJdP(T,_Flux):
     Xz  =   np.array((A/Z)*(A/Z)*Rn/( T+ E0))
     Intens  =   Xz* np.array(_Flux)
     return Rn,Intens
-
 def dTdP(T):
     Rtn  =  np.array((Z/A)*(np.power(np.power(T,2) + 2*T*E0,0.5))/(T + E0))
     return Rtn
